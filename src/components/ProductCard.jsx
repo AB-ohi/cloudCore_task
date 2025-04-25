@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const ProductCart = () => {
   const [products, setProducts] = useState([]);
@@ -8,7 +8,6 @@ const ProductCart = () => {
     fetch("https://admin.refabry.com/api/all/product/get")
       .then((res) => res.json())
       .then((data) => {
-        // console.log("Full API Response:", data.data.data);
         setProducts(data.data.data);
       })
       .catch((err) => console.error("Error fetching products:", err));
