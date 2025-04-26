@@ -3,6 +3,7 @@ import Home from "../Page/Home/Home";
 import Main from "../Layout/main";
 import About from "../About/About";
 import Detail from "../Page/Detail/Detail";
+import OrderForm from "../Page/OrderForm/OrderForm";
 
 let Router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ let Router = createBrowserRouter([
   {
     path:'/detail/:id',
     element:<Detail/>
+  },
+  {
+    path:'/order',
+    element:<OrderForm/>
   }
 ]);
 
