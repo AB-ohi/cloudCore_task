@@ -39,9 +39,11 @@ const OrderForm = () => {
     })
   }
   return (
-    <form
+    <div className="mt-9">
+      <h1 className="text-center text-4xl">Place Your Order</h1>
+      <form
       onSubmit={handleOrder}
-      className="p-4 w-[40%] m-auto space-y-4 bg-gray-100 rounded-md shadow-md"
+      className=" p-4 md:w-[40%] m-auto space-y-4 bg-blue-100 rounded-md shadow-md"
     >
       <input
         name="c_name"
@@ -70,6 +72,10 @@ const OrderForm = () => {
         required
         className="w-full p-2 border"
       />
+      <div>
+        <h1 className="font-semibold">product info</h1>
+      </div>
+      <label htmlFor="">Product name</label>
       <input
         name="product_name"
         placeholder=""
@@ -78,6 +84,7 @@ const OrderForm = () => {
         className="w-full p-2 border"
         readOnly
       />
+        <label htmlFor="text">product code</label>
       <input
         name="product_id"
         placeholder=""
@@ -86,6 +93,7 @@ const OrderForm = () => {
         className="w-full p-2 border"
         readOnly
       />
+        <label className="mt-4" htmlFor="text">product price</label>
       <input
         name="product_price"
         placeholder=""
@@ -102,6 +110,7 @@ const OrderForm = () => {
         Place Order
       </button>
     </form>
+    </div>
   );
 };
 
