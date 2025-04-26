@@ -1,6 +1,9 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
+import Swal from "sweetalert2";
 
 const OrderForm = () => {
+  const naviget =useNavigate()
   const {state} = useLocation([])
   console.log(state)
   const handleOrder =(evn)=>{
@@ -15,6 +18,25 @@ const OrderForm = () => {
     const product_price = form.product_price.value;
     const userOrderInfo = {name,number,mail,address,product_id,product_name,product_price}
     console.log(userOrderInfo)
+
+    fetch("https://admin.refabry.com/api/public/order/create", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userOrderInfo),
+    }).then((res) => res.json())
+    .then((data)=>{
+      console.log(data);
+      Swal.fire({
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      }).then(()=>{
+        naviget('/')
+      })
+    })
   }
   return (
     <form

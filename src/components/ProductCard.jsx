@@ -12,7 +12,16 @@ const ProductCart = () => {
       })
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
-if(products.length === 0)return<p><img className="w-[600px]" src="https://cdn.dribbble.com/userupload/24238262/file/original-6b12fd6ca7a8dd70a94af6e0f14956d7.gif" alt="" /></p>
+  if (products.length === 0)
+    return (
+      <p>
+        <img
+          className="w-[600px]"
+          src="https://cdn.dribbble.com/userupload/24238262/file/original-6b12fd6ca7a8dd70a94af6e0f14956d7.gif"
+          alt=""
+        />
+      </p>
+    );
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Product</h2>
@@ -30,20 +39,28 @@ if(products.length === 0)return<p><img className="w-[600px]" src="https://cdn.dr
               <div className="mt-9 ms-4 mb-4">
                 <p className="font-semibold ">{product.name}</p>
                 <p className="my-3">Price: {product.price}$</p>
-                <button className="px-6 py-3 border-solid border-2 border-blue-400 bg-blue-50 text-blue-400 hover:text-white border-spacing-1 rounded-md hover:bg-blue-400 transition-colors text-2xl ">
-                  <Link state={{
-                    name: product.name,
-                    price: product.price,
-                    buying_price: product.buying_price,
-                    product_code: product.code,
-                    desc: product.short_desc,
-                    category: product.category.name,
-                    stock: product.stock,
-                    discount: product.discount_amount ? product.discount_amount : null,
-                    discount_date: product.discount_date,
-                    picture: 'https://admin.refabry.com/storage/product/7681_1734110373.webp'
-                  }}
-                   to={`/detail/${product.unique_id}`}>Detail</Link>
+                <button className="mb-4">
+                  <Link
+                    className="px-6 py-3 border-solid border-2 border-blue-400 bg-blue-50 text-blue-400 hover:text-white border-spacing-1 rounded-md hover:bg-blue-400 transition-colors text-2xl "
+                    state={{
+                      name: product.name,
+                      price: product.price,
+                      buying_price: product.buying_price,
+                      product_code: product.code,
+                      desc: product.short_desc,
+                      category: product.category.name,
+                      stock: product.stock,
+                      discount: product.discount_amount
+                        ? product.discount_amount
+                        : null,
+                      discount_date: product.discount_date,
+                      picture:
+                        "https://admin.refabry.com/storage/product/7681_1734110373.webp",
+                    }}
+                    to={`/detail/${product.unique_id}`}
+                  >
+                    Detail
+                  </Link>
                 </button>
               </div>
             </div>
