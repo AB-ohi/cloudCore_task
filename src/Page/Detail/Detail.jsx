@@ -63,7 +63,12 @@ const Detail = () => {
           </div>
           <div>
             <button>
-                place order
+                <Link to='/order' state={{
+                  product_code:state.product_code,
+                  product_name:state.name,
+                  product_price:state.price
+
+                }} className="bg-blue-400 px-4 py-3 rounded-lg text-white hover:bg-slate-500 duration-300">place order</Link>
             </button>
           </div>
           </div>
