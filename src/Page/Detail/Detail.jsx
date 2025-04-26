@@ -16,11 +16,11 @@ const Detail = () => {
           Home
         </Link>
       </button>
-      <div className="flex justify-center items-start gap-6  mt-10">
-        <div className="w-[40%]">
+      <div className="md:flex justify-center items-start gap-6  mt-10">
+        <div className="md:w-[40%]">
           <img src={state.picture} alt="" />
         </div>
-        <div className="w-[40%] flex flex-col items-start">
+        <div className="md:w-[40%] w-[90%] m-auto flex flex-col items-start">
           <p className="font-bold text-6xl">{state.name}</p>
           <p className="text-2xl mt-2 border-t-4 border-blue-300">
             {state.category}
@@ -39,7 +39,7 @@ const Detail = () => {
               <span className="text-green-600">InStock:</span> {state.stock}
             </div>
           </div>
-          <div className="flex items-center justify-between w-full">
+          <div className="md:flex items-center justify-between w-full">
           <div className="my-4">
             <label
               htmlFor="size"

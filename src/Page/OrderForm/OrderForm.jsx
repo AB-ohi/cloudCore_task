@@ -73,17 +73,20 @@ const OrderForm = () => {
         className="w-full p-2 border"
       />
       <div>
-        <h1 className="font-semibold">product info</h1>
+        <h1 className="font-semibold ">product info</h1>
       </div>
+      <div>
       <label htmlFor="">Product name</label>
       <input
         name="product_name"
         placeholder=""
         value={state.product_name}
         required
-        className="w-full p-2 border"
+        className="w-full p-2 border "
         readOnly
       />
+      </div>
+        <div>
         <label htmlFor="text">product code</label>
       <input
         name="product_id"
@@ -93,7 +96,9 @@ const OrderForm = () => {
         className="w-full p-2 border"
         readOnly
       />
-        <label className="mt-4" htmlFor="text">product price</label>
+        </div>
+       <div>
+       <label className="mt-4" htmlFor="text">product price</label>
       <input
         name="product_price"
         placeholder=""
@@ -102,6 +107,7 @@ const OrderForm = () => {
         className="w-full p-2 border"
         readOnly
       />
+       </div>
       
       <button
         type="submit"
